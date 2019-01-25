@@ -1,6 +1,6 @@
 # twenty-four
 Solver for the game Twenty-Four (24)
-
+```
 usage: TwentyFour.py [-h] [-t TARGET] [-s] a b c d
 
 positional arguments:
@@ -14,6 +14,7 @@ optional arguments:
   -t TARGET, --target TARGET
                         The target number. For the game of TwentyFour it is 24
   -s, --solution        Print the solutions
+```
 
 # Example
 ```
