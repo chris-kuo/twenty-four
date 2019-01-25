@@ -1,3 +1,5 @@
+import sys
+
 class Expression():
 	def __init__(self, value, exp=''):
 		self.value = value
@@ -107,23 +109,38 @@ class TwentyFour():
 		return any(nums[0] == target for nums in nums_list)
 
 if __name__ == '__main__':
+	import argparse
+	parser = argparse.ArgumentParser()
+	parser.add_argument('a', help='First number', type=int)
+	parser.add_argument('b', help='Second number', type=int)
+	parser.add_argument('c', help='Third number', type=int)
+	parser.add_argument('d', help='Fourth number', type=int)
+	parser.add_argument('-t', '--target', help='The target number. For the game of TwentyFour it is 24', type=int)
+	parser.add_argument('-s', '--solution', help='Print the solutions', action='store_true')
+	args = parser.parse_args()
+	nums = [args.a, args.b, args.c, args.d]
+	target = args.target if args.target else 24
+	print(f"{nums} is {'' if TwentyFour.is_solveable(nums, target) else 'not '}solveable")
+	if args.solution:
+		print('\n'.join(TwentyFour.solve(nums, target)))
 
-	nums = [1,2,3,4]
-	print()
-	print(f"{nums} is {'' if TwentyFour.is_solveable(nums) else 'not '}solveable")
-	print('\n'.join(TwentyFour.solve(nums)))
 
-	nums = [1,4,6,7]
-	print()
-	print(f"{nums} is {'' if TwentyFour.is_solveable(nums) else 'not '}solveable")
-	print('\n'.join(TwentyFour.solve(nums)))
+	# nums = [1,2,3,4]
+	# print()
+	# print(f"{nums} is {'' if TwentyFour.is_solveable(nums) else 'not '}solveable")
+	# print('\n'.join(TwentyFour.solve(nums)))
 
-	nums = [7,2,8,9]
-	print()
-	print(f"{nums} is {'' if TwentyFour.is_solveable(nums) else 'not '}solveable")
-	print('\n'.join(TwentyFour.solve(nums)))
+	# nums = [1,4,6,7]
+	# print()
+	# print(f"{nums} is {'' if TwentyFour.is_solveable(nums) else 'not '}solveable")
+	# print('\n'.join(TwentyFour.solve(nums)))
 
-	nums = [7,2,9,9]
-	print()
-	print(f"{nums} is {'' if TwentyFour.is_solveable(nums) else 'not '}solveable")
-	print('\n'.join(TwentyFour.solve(nums)))
+	# nums = [7,2,8,9]
+	# print()
+	# print(f"{nums} is {'' if TwentyFour.is_solveable(nums) else 'not '}solveable")
+	# print('\n'.join(TwentyFour.solve(nums)))
+
+	# nums = [7,2,9,9]
+	# print()
+	# print(f"{nums} is {'' if TwentyFour.is_solveable(nums) else 'not '}solveable")
+	# print('\n'.join(TwentyFour.solve(nums)))
