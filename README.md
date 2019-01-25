@@ -16,6 +16,7 @@ optional arguments:
   -s, --solution        Print the solutions
 
 # Example
+```
 > python TwentyFour.py 4 7 9 2
 [4, 7, 9, 2] is solveable
 
@@ -36,3 +37,4 @@ optional arguments:
 > python TwentyFour.py 3 7 9 2 -t 29 -s
 ((2 * (7 + 9)) - 3)
 (9 + (2 * (3 + 7)))
+```
